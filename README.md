@@ -1,4 +1,4 @@
-# RAG Optimizer Package
+# RAG-search
 
 A framework for experimenting with and optimizing Retrieval-Augmented Generation (RAG) pipeline architectures.
 
@@ -8,13 +8,9 @@ This package provides a framework for testing different RAG pipeline configurati
 
 ## Features
 
-- **Modular Architecture**: Easily swap out ingestion, chunking, and retrieval implementations
-- **Experiment Tracking**: RAGArtifact stores experiment parameters and metrics
-- **Multiple Ingestion Methods**: Support for Unstructured and Docling document parsers
-- **Flexible Chunking**: Sliding window chunking with customizable size and overlap
-- **Type-Safe Vector DB Interface**: Protocol-based type hints for vector database integration
-- **LangChain Integration**: Ready to integrate with LangChain Q&A pipelines
-- **Evaluation Metrics**: Built-in support for Precision@K, Recall@K, and MRR
+- **Modular Architecture**: Pluggable components across the ingestion and retrieval stack with sample wrappers over top open-source component offerings.
+- **Experiment Pipeline**: Generate and test all combinations of component variants
+- **LangChain Integration**: RAGArtifact extends `BaseRetriever` for seamless use with LangChain chains
 
 ## Installation
 

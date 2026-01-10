@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+
+# Environments
+.venv/
+
+# Testing
+.pytest_cache/
+
+# OS
+.DS_Store
