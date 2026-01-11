@@ -14,16 +14,8 @@ This package provides a framework for testing different RAG pipeline configurati
 
 ## Installation
 
-### Development Installation
-
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd rag_package
-
-# Install in development mode
-pip install -r requirements.txt
-pip install -e src/rag_select
+pip install rag_select
 ```
 
 ## License
