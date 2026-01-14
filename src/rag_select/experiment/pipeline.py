@@ -1,8 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from itertools import product
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict
 
 from rag_select.rag_client import RAGClient
 from rag_select.experiment.artifact.rag_artifact import RAGArtifact
@@ -22,23 +21,6 @@ class PipelineConfig:
     storage: BaseStorage
     retriever: BaseRetriever
     name: str
-
-
-def generate_client_variations(
-    *,
-    ingestion_variants: List[BaseIngestion],
-    chunking_variants: List[BaseChunking],
-    embedding_variants: List[BaseEmbedding],
-    storage_variants: List[BaseStorage],
-    retriever_variants: List[BaseRetriever],
-) -> List[PipelineConfig]:
-    configs: List[PipelineConfig] = []
-    for i, (ing, ch, emb, st, ret) in enumerate(product(
-        ingestion_variants, chunking_variants, embedding_variants, storage_variants, retriever_variants
-    ), 1):
-        name = f"Config {i}: {type(ing).__name__} | {type(ch).__name__} | {type(emb).__name__} | {type(st).__name__} | {type(ret).__name__}"
-        configs.append(PipelineConfig(ing, ch, emb, st, ret, name))
-    return configs
 
 
 def build_client(cfg: PipelineConfig) -> RAGClient:
